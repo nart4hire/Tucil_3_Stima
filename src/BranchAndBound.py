@@ -304,7 +304,7 @@ class BranchAndBound:
         self.nodecount = 0
         self.starttime = 0
         self.endtime = 0
-        if Reachable(ENDSTATE, self.root.position, False):
+        if Reachable(ENDSTATE, self.root.position):
             self.queue.append(self.root)
             self.nodecount += 1
             signal.signal(signal.SIGINT, self.signal_handler)

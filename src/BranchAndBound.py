@@ -465,7 +465,7 @@ if __name__ == "__main__":
         print(tabulate(array, tablefmt="grid"))
     else:
         print(LEFT_BRACKET + "INPUT" + RIGHT_BRACKET)
-        displayPuzzle(array)
+        displayPuzzle(Node(array))
 
     bnb = BranchAndBound(array)
 

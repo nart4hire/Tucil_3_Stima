@@ -205,17 +205,16 @@ def getScramble():
 
     return matrix
 
-def Reachable(endpos, curpos, silent = True):
+def Reachable(endpos, curpos):
     endpos_flat = [item for array in endpos for item in array]
     curpos_flat = [item for array in curpos for item in array]
     count = 0
 
-    if silent == False:
-        d = dict()
-        for i in range(1, 16):
-            d[str(i)] = 0
-        d['0'] = 0
-        d['X'] = 0
+    d = dict()
+    for i in range(1, 16):
+        d[str(i)] = 0
+    d['0'] = 0
+    d['X'] = 0
 
     for i, num in enumerate(curpos_flat):
         kurang = 0
@@ -224,28 +223,23 @@ def Reachable(endpos, curpos, silent = True):
             idx_j = endpos_flat.index(curpos_flat[j])
             if idx_j < idx_i:
                 kurang += 1
-        if silent == False:
-            d[str(num)] = kurang
+        d[str(num)] = kurang
         count += kurang
 
     if curpos_flat.index(0) in [1, 3, 4, 6, 9, 11, 12, 14]:
-        if silent == False:
-            d['X'] = 1
+        d['X'] = 1
         count += 1
 
-    if silent == False:
-        d['Total'] = count
-        df = pd.DataFrame(d, index=[0])
-        print(tabulate(df.T))
-        print("The Value Of Reachability is:", count)
+    d['Total'] = count
+    df = pd.DataFrame(d, index=[0])
+    print(tabulate(df.T))
+    print("The Value Of Reachability is:", count)
 
     if count % 2 == 0:
-        if silent == False:
-            print("Hence the End State is Reachable")
+        print("Hence the End State is Reachable")
         return True
     else:
-        if silent == False:
-            print("Hence the End State is Unreachable")
+        print("Hence the End State is Unreachable")
         return False
 
 def getMoves(node: Node):

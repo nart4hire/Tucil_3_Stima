@@ -23,8 +23,8 @@ Jika terdapat library yang belum ada, bisa melakukan "pip install {nama_library}
 1. Pada folder repository, masukkan "cd src"
 2. Masukkan "python BranchAndBound.py" untuk menjalankan program secara default
 3. Ada beberapa argument tambahan yang dapat dimasukkan yaitu:
-  - '-v' atau '-verbose', akan mengubah luaran menjadi standar ASCII dan menambahkan luaran pohon ruang status, urutan pembangkitan simpul, dan solusi dalam bentuk Node
-  - angka, akan mengubah kedalaman Pseudorandom Generation dari puzzle, semakin dalam akan semakin rumit sehingga mungkin program akan memakan waktu yang cukup lama untuk kedalaman yang tinggi. (e.x. Kedalaman berarti jumlah arah yang diterapkan pengacak pada matriks tujuan hingga mencapai matriks masukan, misalkan jika dimasukkan 2, maka pengacak akan mengambil matriks tujuan, kemudian menerapkan 2 arah (cth. 'DOWN', 'RIGHT') sehingga matriks masukkan seperti pada gambar di bawah)
+  - '-v' atau '-verbose', akan mengubah luaran menjadi standar ASCII dan menambahkan luaran pohon ruang status, urutan pembangkitan simpul, dan solusi dalam bentuk Node. (cth. "python BranchAndBound.py -v" atau "python BranchAndBound.py -verbose")
+  - angka, akan mengubah kedalaman Pseudorandom Generation dari puzzle, semakin dalam akan semakin rumit sehingga mungkin program akan memakan waktu yang cukup lama untuk kedalaman yang tinggi. (e.x. Kedalaman berarti jumlah arah yang diterapkan pengacak pada matriks tujuan hingga mencapai matriks masukan, misalkan jika dimasukkan 2 (cth. "python BranchAndBound.py 2"), maka pengacak akan mengambil matriks tujuan, kemudian menerapkan 2 arah (cth. 'DOWN', 'RIGHT') sehingga matriks masukkan seperti pada gambar di bawah)
 
     ![Matriks_Tujuan](img/end_state.png)![Arrow](img/Arrow.png)![Matriks_Masukan](img/random_input.png)
 
@@ -32,4 +32,4 @@ Jika terdapat library yang belum ada, bisa melakukan "pip install {nama_library}
 
 Catatan:
   - Disarankan untuk pengetesan dilakukan dengan argumen '-v' agar lebih lengkap dan dipipe ke dalam file (e.x. Penggunaan seperti "python BranchAndBound.py -v known_test.txt > ../test/known_test.out" akan mengeluarkan luaran pada file known_test.out pada folder test )
-  - Argumen Depth dan File tidak dapat dimasukkan bersamaan dan argumen Verbose harus selalu berada di posisi argumen pertama.
+  - Argumen Depth dan File tidak dapat dimasukkan bersamaan dan argumen Verbose harus selalu berada di posisi argumen pertama. (cth. "python BranchAndBound.py -v 18" atau "python BranchAndBound.py -v known_test.txt")

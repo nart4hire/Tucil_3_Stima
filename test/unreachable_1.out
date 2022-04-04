@@ -1,0 +1,24 @@
+-----  --
+1       0
+2       0
+3       1
+4       1
+5       0
+6       0
+7       1
+8       0
+9       0
+10      0
+11      3
+12      6
+13      0
+14      4
+15     11
+0      10
+X       0
+Total  37
+-----  --
+The Value Of Reachability is: 37
+Hence the End State is Unreachable
+
+End State Unreachable, Exiting...

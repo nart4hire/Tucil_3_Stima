@@ -76,9 +76,6 @@ class Node:
         self.solution = _solution
         self.child = list()
 
-    def addChild(self, _child):
-        self.child.append(_child)
-
     def f(self):
         if self.parent == None:
             return 0
@@ -93,6 +90,9 @@ class Node:
             if num != 0 and i != endpos_flat.index(num):
                 count += 1
         return count
+
+    def addChild(self, _child):
+        self.child.append(_child)
 
     def getParent(self):
         return self.parent
@@ -353,7 +353,6 @@ class BranchAndBound:
         else:
             print("\nEnd State Unreachable, Exiting...")
             sys.exit()
-
 
     def raiseNodes(self, root_node: Node):
         posarr = getMoves(root_node)

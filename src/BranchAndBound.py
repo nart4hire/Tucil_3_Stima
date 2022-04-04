@@ -467,6 +467,13 @@ if __name__ == "__main__":
     else:
         array = getScramble()
 
+    if VERBOSE:
+        print("--- INPUT ---")
+        print(tabulate(array, tablefmt="grid"))
+    else:
+        print(LEFT_BRACKET + "INPUT" + RIGHT_BRACKET)
+        displayPuzzle(array)
+
     bnb = BranchAndBound(array)
 
     if VERBOSE:
